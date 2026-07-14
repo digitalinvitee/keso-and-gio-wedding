@@ -523,17 +523,17 @@ body.experience-started .hero-date{
 ========================================================= */
 
 .ornament-gallery{
-  padding:88px 6vw 96px;
+  padding:8px 18px 10px;
   overflow:visible;
 }
 
 .ornament-gallery-grid{
-  width:min(1040px,100%);
+  width:min(680px,100%);
   margin:0 auto;
 
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:54px;
+  grid-template-columns:1fr;
+  gap:0;
 
   align-items:start;
 }
@@ -554,7 +554,7 @@ body.experience-started .hero-date{
 
   position:relative;
   width:100%;
-  aspect-ratio:4 / 5;
+  aspect-ratio:4 / 4.4;
 
   display:grid;
   place-items:center;
@@ -784,7 +784,7 @@ body.experience-started .hero-date{
   margin-top:24px;
   padding-top:20px;
 
-  font-size:.8rem;
+  font-size: clamp(12px, 2.8vw, 16px);
   line-height:1.75;
 
   color:var(--coffee);
@@ -1185,17 +1185,37 @@ body.experience-started .hero-date{
 }
 
 /* =========================================================
+   INTRO BACKGROUND — MOBILE FRAME / CLEAN DESKTOP
+========================================================= */
+
+@media(max-width:1024px){
+  .intro-visual{
+    background-image:url("frame.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:100% 100%;
+  }
+}
+
+@media(min-width:1025px){
+  .intro-visual{
+    background-image:none;
+  }
+}
+
+/* =========================================================
    TABLET
 ========================================================= */
 
 @media(max-width:900px){
 
   .ornament-gallery{
-    padding:110px 5vw 125px;
+    padding:4px 14px 8px;
   }
 
   .ornament-gallery-grid{
-    gap:34px;
+    width:min(620px,100%);
+    gap:0;
   }
 
   .photo-bg{
@@ -1234,20 +1254,6 @@ body.experience-started .hero-date{
 
     overflow:hidden;
   }
-
-  @media (max-width: 1024px) {
-  .intro-visual{
-    background-image: url("frame.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-  }
-}
-@media (min-width: 1025px) {
-  .intro-visual{
-    background: none;
-  }
-}
 
   .intro-png{
     width:78vw;
@@ -1330,17 +1336,14 @@ body.experience-started .hero-date{
 }
 
   .ornament-gallery{
-     padding:38px 12px 42px;
-    overflow:visible;
+    padding:0 10px 6px;
   }
 
   .ornament-gallery-grid{
     width:100%;
-
     grid-template-columns:1fr;
-    gap:34px;
+    gap:0;
   }
-
   .ornament-photo-frame{
     width:min(100%,430px);
     margin:0 auto;
@@ -1664,8 +1667,3 @@ body.experience-started .hero-date{
 
     border-top:1px solid rgba(49,64,45,.18) !important;
 }
-/* Mobile */
-.frame {
-  display: block;
-}
-
