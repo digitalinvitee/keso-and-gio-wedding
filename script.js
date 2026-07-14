@@ -29,7 +29,8 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
 
   textItems.forEach((item) => {
-    const text = item.getAttribute(`data-${lang}`);
+    const text =
+      item.getAttribute(`data-${lang}`);
 
     if (!text) {
       return;
@@ -43,9 +44,10 @@ function setLanguage(lang) {
   });
 
   placeholderItems.forEach((item) => {
-    const value = item.getAttribute(
-      `data-placeholder-${lang}`
-    );
+    const value =
+      item.getAttribute(
+        `data-placeholder-${lang}`
+      );
 
     if (value) {
       item.placeholder = value;
@@ -193,12 +195,6 @@ updateMusicButton();
    COUNTDOWN
 ========================================================= */
 
-/*
-  ქორწილის თარიღი:
-  6 სექტემბერი, 2026
-  16:30 — თბილისის დრო
-*/
-
 const weddingDate = new Date(
   "2026-09-06T16:30:00+04:00"
 ).getTime();
@@ -275,8 +271,11 @@ setInterval(
 
 
 /* =========================================================
-   RSVP
+   GOOGLE SHEETS RSVP
 ========================================================= */
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxXYVPm2JeowkOVBnLiHsq4eCs6AuZb0ghiZkms2HDEyF4a23irpNkZaRhywe2cVM2O/exec";
 
 const rsvpForm =
   document.querySelector(".rsvp-form");
@@ -292,6 +291,8 @@ function resetRsvpButton() {
     return;
   }
 
+  rsvpButton.disabled = false;
+
   rsvpButton.textContent =
     currentLang === "ka"
       ? "გაგზავნა"
@@ -306,19 +307,32 @@ function resetRsvpButton() {
 
 rsvpForm?.addEventListener(
   "submit",
-  (event) => {
+  async (event) => {
     event.preventDefault();
 
-    if (!rsvpButton) {
+    if (!rsvpForm || !rsvpButton) {
       return;
     }
 
-    const guestName =
-      rsvpForm.elements.name
-        .value
-        .trim();
+    const formData =
+      new FormData(rsvpForm);
 
-    if (!guestName) {
+    const name =
+      String(
+        formData.get("name") || ""
+      ).trim();
+
+    const attendance =
+      String(
+        formData.get("attendance") || ""
+      ).trim();
+
+    const message =
+      String(
+        formData.get("message") || ""
+      ).trim();
+
+    if (!name) {
       rsvpButton.textContent =
         currentLang === "ka"
           ? "შეავსეთ სახელი"
@@ -340,24 +354,113 @@ rsvpForm?.addEventListener(
       return;
     }
 
+    if (!attendance) {
+      rsvpButton.textContent =
+        currentLang === "ka"
+          ? "აირჩიეთ დასწრება"
+          : "Select attendance";
+
+      rsvpButton.classList.remove(
+        "sent"
+      );
+
+      rsvpButton.classList.add(
+        "error"
+      );
+
+      setTimeout(
+        resetRsvpButton,
+        1700
+      );
+
+      return;
+    }
+
+    const payload =
+      new URLSearchParams();
+
+    payload.append(
+      "name",
+      name
+    );
+
+    payload.append(
+      "attendance",
+      attendance
+    );
+
+    payload.append(
+      "message",
+      message
+    );
+
+    payload.append(
+      "language",
+      currentLang
+    );
+
+    rsvpButton.disabled = true;
+
     rsvpButton.textContent =
       currentLang === "ka"
-        ? "გაგზავნილია"
-        : "Sent";
+        ? "იგზავნება..."
+        : "Sending...";
 
     rsvpButton.classList.remove(
+      "sent",
       "error"
     );
 
-    rsvpButton.classList.add(
-      "sent"
-    );
+    try {
+      await fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method:"POST",
+          mode:"no-cors",
+          headers:{
+            "Content-Type":
+              "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          body:payload.toString()
+        }
+      );
 
-    setTimeout(() => {
+      rsvpButton.textContent =
+        currentLang === "ka"
+          ? "გაგზავნილია"
+          : "Sent";
+
+      rsvpButton.classList.add(
+        "sent"
+      );
+
       rsvpForm.reset();
 
-      resetRsvpButton();
-    }, 2200);
+      setTimeout(
+        resetRsvpButton,
+        2200
+      );
+
+    } catch (error) {
+      console.error(
+        "RSVP submission error:",
+        error
+      );
+
+      rsvpButton.textContent =
+        currentLang === "ka"
+          ? "შეცდომა — სცადეთ თავიდან"
+          : "Error — try again";
+
+      rsvpButton.classList.add(
+        "error"
+      );
+
+      setTimeout(
+        resetRsvpButton,
+        2500
+      );
+    }
   }
 );
 
@@ -422,6 +525,7 @@ if (
       observer.observe(item);
     }
   );
+
 } else {
   revealItems.forEach((item) => {
     item.classList.add(
