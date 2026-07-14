@@ -31,11 +31,11 @@
     href="https://fonts.gstatic.com"
     crossorigin
   >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
+<link
+  href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+ 
 
   <link
     rel="stylesheet"
@@ -76,21 +76,19 @@
        INTRO
   ========================================== -->
 
-  <section
-    class="intro-screen"
-    id="introScreen"
-    aria-label="მოსაწვევის გახსნის გვერდი"
-  >
+<section
+  class="intro-screen"
+  id="introScreen"
+  aria-label="მოსაწვევის გახსნის გვერდი"
+>
 
-    <div class="intro-visual">
+  <div class="intro-visual">
 
-      <img
-        src="picture.PNG"
-        alt="კესო და გიორგი"
-        class="intro-png"
-      >
-
-    </div>
+    <img
+      src="picture.PNG"
+      alt="კესო და გიორგი"
+      class="intro-png"
+    >
 
     <button
       class="open-invitation"
@@ -100,17 +98,16 @@
 
       <span
         data-ka="მოსაწვევის გახსნა"
-        data-en="Open invitation"
+        data-en="Open Invitation"
       >
         მოსაწვევის გახსნა
       </span>
 
-      <i aria-hidden="true"></i>
-
     </button>
 
-  </section>
+  </div>
 
+</section>
 
   <!-- =========================================
        MUSIC BUTTON
@@ -141,7 +138,7 @@
 
     <div
       class="lang-switch"
-      aria-label="ენის არჩევა"
+      aria-label="Language selection / ენის არჩევა"
     >
 
       <button
@@ -200,6 +197,7 @@
         </p>
 
         <h1
+          class="hero-title"
           data-en="Gio and Keso"
           data-ka="gio da keso"
         >
@@ -246,7 +244,7 @@
         </span>
 
         <p
-          data-en="Dear guests,<br><br>With love, we invite you to share one of the warmest and most meaningful days of our lives.<br><br>We would be delighted to celebrate this special moment together with you and make it even more beautiful with your presence."
+          data-en="Dear Family &amp; Friends,<br><br>With great joy, we invite you to celebrate one of the most meaningful days of our lives.<br><br>Your presence will make our celebration even more special, and we would be truly honored to share this unforgettable day with you."
           data-ka="ძვირფასო სტუმრებო,<br><br>სიყვარულით გეპატიჟებით ჩვენი ცხოვრების ყველაზე თბილი დღის გასაზიარებლად.<br><br>გვინდა, ამ განსაკუთრებულ დღეს ჩვენთან ერთად იყოთ და თქვენი სიხარულით ეს დღე კიდევ უფრო ლამაზი გახადოთ."
         >
           ძვირფასო სტუმრებო,<br><br>
@@ -265,142 +263,35 @@
 
 
     <!-- =========================================
-         3. POLAROID GALLERY
+         3. ORNAMENT GALLERY
     ========================================== -->
+<section
+  class="ornament-gallery"
+  aria-label="კესო და გიორგის ფოტოები"
+>
 
-    <section
-      class="polaroid-gallery"
-      aria-label="კესო და გიორგის ფოტოები"
-    >
+  <div class="ornament-gallery-grid">
 
-      <div class="gallery-stage">
-
-        <figure class="polaroid polaroid-one">
-
-          <img
-            src="1.JPG"
-            alt="კესო და გიორგი — ფოტო 1"
-            loading="lazy"
-          >
-
-        </figure>
-
-
-        <figure class="polaroid polaroid-two">
-
-          <img
-            src="2.JPG"
-            alt="კესო და გიორგი — ფოტო 2"
-            loading="lazy"
-          >
-
-        </figure>
-
-
-        <figure class="polaroid polaroid-three">
-
-          <img
-            src="3.JPG"
-            alt="კესო და გიორგი — ფოტო 3"
-            loading="lazy"
-          >
-
-        </figure>
-
+    <figure class="ornament-photo-frame">
+      <div class="photo-bg">
+        <img src="1.JPG" alt="კესო და გიორგი — ფოტო 1" loading="lazy">
       </div>
+    </figure>
 
-    </section>
+    <figure class="ornament-photo-frame">
+      <div class="photo-bg">
+        <img src="2.JPG" alt="კესო და გიორგი — ფოტო 2" loading="lazy">
+      </div>
+    </figure>
+
+  </div>
+
+</section>
+
 
 
     <!-- =========================================
-         4. COUNTDOWN
-    ========================================== -->
-
-    <section class="countdown-section">
-
-      <p
-        class="countdown-label"
-        data-ka="ქორწილის დღემდე დარჩენილია"
-        data-en="Time remaining until the wedding day"
-      >
-        ქორწილის დღემდე დარჩენილია
-      </p>
-
-      <div
-        class="countdown"
-        aria-label="ქორწილამდე დარჩენილი დრო"
-      >
-
-        <div>
-
-          <strong id="days">
-            00
-          </strong>
-
-          <span
-            data-en="Days"
-            data-ka="დღე"
-          >
-            დღე
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong id="hours">
-            00
-          </strong>
-
-          <span
-            data-en="Hours"
-            data-ka="საათი"
-          >
-            საათი
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong id="minutes">
-            00
-          </strong>
-
-          <span
-            data-en="Minutes"
-            data-ka="წუთი"
-          >
-            წუთი
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong id="seconds">
-            00
-          </strong>
-
-          <span
-            data-en="Seconds"
-            data-ka="წამი"
-          >
-            წამი
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         5. DATE · LOCATION · DRESS CODE
+         4. DATE · LOCATION · DRESS CODE
     ========================================== -->
 
     <section class="details-section">
@@ -484,7 +375,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="location-link"
-          data-en="Open Location"
+          data-en="View on Google Maps"
           data-ka="ლოკაციის ნახვა"
         >
           ლოკაციის ნახვა
@@ -499,7 +390,7 @@
 
        
         <h3
-          data-en="Pastel Colors"
+          data-en="Dress Code"
           data-ka="Dress Code"
         >
           Dress Code
@@ -507,7 +398,7 @@
 
         <p
           class="detail-sub"
-          data-en="We would be delighted if you choose pastel colors."
+          data-en="We would be delighted if you joined us in our wedding color palette."
           data-ka="მოხარული ვიქნებით, თუ შეარჩევთ პასტელურ ფერებს."
         >
           მოხარული ვიქნებით, თუ შეარჩევთ პასტელურ ფერებს.
@@ -556,6 +447,15 @@
 
         </div>
 
+        <p
+          class="dress-code-note"
+          data-en="Kindly reserve white and shades close to white for the bride."
+          data-ka="გთხოვთ, თეთრი და თეთრთან მიახლოებული ფერები პატარძალს დავუთმოთ."
+        >
+          გთხოვთ, თეთრი და თეთრთან მიახლოებული ფერები პატარძალს დავუთმოთ.
+        </p>
+
+
        
 
       </article>
@@ -564,7 +464,7 @@
 
 
     <!-- =========================================
-         6. PROGRAM
+         5. PROGRAM
     ========================================== -->
 
     <section class="program-section">
@@ -599,14 +499,14 @@
           <div>
 
             <h3
-              data-en="Guest Arrival"
+              data-en="Guest Reception"
               data-ka="სტუმრების მიღება"
             >
               სტუმრების მიღება
             </h3>
 
             <p
-              data-en="Welcome drink"
+              data-en="Welcome Reception"
               data-ka="მისასალმებელი სასმელი"
             >
               მისასალმებელი სასმელი
@@ -653,7 +553,7 @@
           <div>
 
             <h3
-              data-en="Celebration Dinner"
+              data-en="Dinner Reception"
               data-ka="სადღესასწაულო ვახშამი"
             >
               სადღესასწაულო ვახშამი
@@ -700,123 +600,8 @@
       </div>
 
     </section>
-
-
     <!-- =========================================
-         7. RECOMMENDATIONS
-    ========================================== -->
-
-    <section class="recommendations-section">
-
-      <div class="section-heading">
-
-        <span
-          data-en="Kindly Note"
-          data-ka="გთხოვთ, გაითვალისწინოთ"
-        >
-          გთხოვთ, გაითვალისწინოთ
-        </span>
-
-        <h2
-          data-en="Important Information"
-          data-ka="მნიშვნელოვანი ინფორმაცია"
-        >
-          მნიშვნელოვანი ინფორმაცია
-        </h2>
-
-      </div>
-
-
-      <div class="recommendations-list">
-
-        <article>
-
-          <span>
-            01
-          </span>
-
-          <div>
-
-            <h3
-              data-en="Adults Only"
-              data-ka="მხოლოდ ზრდასრულებისთვის"
-            >
-              მხოლოდ ზრდასრულებისთვის
-            </h3>
-
-            <p
-              data-en="The event is not intended for children."
-              data-ka="ღონისძიება ბავშვებისთვის არ არის განკუთვნილი."
-            >
-              ღონისძიება ბავშვებისთვის არ არის განკუთვნილი.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            02
-          </span>
-
-          <div>
-
-            <h3
-              data-en="Confirmation Deadline"
-              data-ka="დადასტურების ვადა"
-            >
-              დადასტურების ვადა
-            </h3>
-
-            <p
-              data-en="Please confirm your attendance by August 15."
-              data-ka="გთხოვთ, დასწრება დაგვიდასტუროთ 15 აგვისტომდე."
-            >
-              გთხოვთ, დასწრება დაგვიდასტუროთ
-              15 აგვისტომდე.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            03
-          </span>
-
-          <div>
-
-            <h3
-              data-en="For Questions"
-              data-ka="dress code"
-            >
-              dress code
-            </h3>
-
-            <p
-              data-en="Please contact Mariam:"
-              data-ka="გთხოვთ, თეთრი და თეთრთან მიახლოებული ფერები პატარძალს დავუთმოთ."
-            >
-             გთხოვთ, თეთრი და თეთრთან მიახლოებული ფერები პატარძალს დავუთმოთ.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         8. RSVP
+         6. RSVP
     ========================================== -->
 
     <section
@@ -828,24 +613,23 @@
 
 
         <h2
-          data-en="Kindly confirm your attendance"
+          data-en="Kindly RSVP"
           data-ka="დაგვიდასტურეთ დასწრება"
         >
           დაგვიდასტურეთ დასწრება
         </h2>
 
         <p
-          data-en="Please confirm your attendance by August 15."
-          data-ka="გთხოვთ, დაადასტუროთ დასწრება 15 აგვისტომდე."
+          data-en="We kindly request that this celebration be an adults-only occasion."
+          data-ka="მხოლოდ ზრდასრულებისთვის. ღონისძიება ბავშვებისთვის არ არის განკუთვნილი."
         >
-          გთხოვთ, დაადასტუროთ დასწრება
-          15 აგვისტომდე.
+          მხოლოდ ზრდასრულებისთვის.<br>
+          ღონისძიება ბავშვებისთვის არ არის განკუთვნილი.
         </p>
 
       </div>
 
-
-      <form
+<form
         class="rsvp-form"
         id="rsvpForm"
       >
@@ -940,7 +724,94 @@
 
 
     <!-- =========================================
-         FINAL SECTION
+         7. COUNTDOWN
+    ========================================== -->
+
+    <section class="countdown-section">
+
+      <p
+        class="countdown-label"
+        data-ka="ქორწილის დღემდე დარჩენილია"
+        data-en="Countdown to Our Wedding"
+      >
+        ქორწილის დღემდე დარჩენილია
+      </p>
+
+      <div
+        class="countdown"
+        aria-label="ქორწილამდე დარჩენილი დრო"
+      >
+
+        <div>
+
+          <strong id="days">
+            00
+          </strong>
+
+          <span
+            data-en="Days"
+            data-ka="დღე"
+          >
+            დღე
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong id="hours">
+            00
+          </strong>
+
+          <span
+            data-en="Hours"
+            data-ka="საათი"
+          >
+            საათი
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong id="minutes">
+            00
+          </strong>
+
+          <span
+            data-en="Minutes"
+            data-ka="წუთი"
+          >
+            წუთი
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong id="seconds">
+            00
+          </strong>
+
+          <span
+            data-en="Seconds"
+            data-ka="წამი"
+          >
+            წამი
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         8. FINAL SECTION
     ========================================== -->
 
     <section class="final-section">
@@ -948,7 +819,7 @@
       <div class="final-image">
 
         <img
-          src="final.JPG"
+          src="3.JPG"
           alt="კესო და გიორგი"
           loading="lazy"
         >
@@ -967,10 +838,11 @@
         </p>
 
         <h2
-          data-en="Gio and Keso"
+          class="final-title"
+          data-en="Gio &amp; Keso"
           data-ka="gio da keso"
         >
-          კესო და გიორგი
+          gio da keso
         </h2>
 
       </div>
