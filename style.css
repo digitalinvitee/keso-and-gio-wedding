@@ -1,4 +1,3 @@
-
 @font-face{
   font-family:"WeddingNames";
   src:url("assets/geo_mrude.ttf") format("truetype");
@@ -512,11 +511,7 @@ body.experience-started .hero-date{
   color:var(--taupe);
 }
 
-.letter-section p{
-  font-size:clamp(1.25rem,2.4vw,2rem);
-  line-height:1.75;
-  color:var(--tea);
-}
+
 
 /* =========================================================
    ORNAMENT GALLERY — FULL FRAME, CENTERED PHOTO
@@ -1634,36 +1629,239 @@ body.experience-started .hero-date{
     padding-top:8px;
   }
 }
+
 /* =========================================================
-   DRESS CODE TEXT EMPHASIS
+   INVITATION COPY
 ========================================================= */
 
-.dress-intro{
-    margin-top:18px !important;
-    margin-bottom:20px !important;
+.invitation-copy{
+  width:min(100%,920px);
+  margin:0 auto;
 
-    font-size:1rem !important;
-    line-height:1.9 !important;
-
-    font-weight:600 !important;
-
-    color:#31402d !important;
-
-    text-align:center !important;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
 }
 
-.dress-warning{
-    margin-top:22px !important;
-    padding-top:18px !important;
+.letter-section .invitation-copy p{
+  width:100%;
+  max-width:none;
+  margin:0;
 
-    font-size:1rem !important;
-    line-height:1.9 !important;
+  font-size:clamp(1.05rem,2vw,1.65rem);
+  line-height:1.65;
+  text-align:center;
+
+  text-wrap:balance;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  hyphens:none;
+}
+
+/* =========================================================
+   TYPOGRAPHY CONTROL
+========================================================= */
+
+.hero-title,
+.final-title,
+.section-heading h2,
+.rsvp-heading h2,
+.detail h3,
+.timeline h3{
+  word-break:keep-all;
+  overflow-wrap:normal;
+  hyphens:none;
+}
+
+.hero-location,
+.hero-date,
+.detail > span,
+.location-link,
+.countdown-label,
+.timeline time,
+.final-content p,
+.rsvp-form label span,
+.open-invitation{
+  white-space:nowrap;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  hyphens:none;
+}
+
+/* =========================================================
+   MOBILE — LEFT-ALIGNED DRESS CODE + RSVP
+========================================================= */
+
+@media(max-width:640px){
+
+  /* Invitation: two clean paragraphs */
+
+  .letter-inner{
+    width:100%;
+    max-width:100%;
+  }
+
+  .invitation-copy{
+    width:100%;
+    gap:22px;
+  }
+
+  .letter-section .invitation-copy p{
+    font-size:clamp(.92rem,4vw,1.08rem);
+    line-height:1.72;
+  }
+
+  /* Dress Code: title, palette and both notes start from one left edge */
+
+  .dress-detail{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+  }
+
+@media (max-width:640px){
+
+  .dress-detail{
+    display:block;
+    width:100%;
+  }
+
+  .dress-detail h3,
+  .dress-palette,
+  .dress-intro,
+  .dress-warning{
+    width:100%;
+    max-width:none;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    text-align:left !important;
+  }
+
+  .dress-palette{
+    justify-content:flex-start;
+    margin-top:22px;
+  }
+
+  .dress-intro{
+    margin-top:22px !important;
+    margin-bottom:20px !important;
 
     font-weight:700 !important;
+  }
 
-    color:#20291d !important;
+  .dress-warning{
+    margin-top:0 !important;
+    padding-top:20px !important;
 
-    text-align:center !important;
+    font-weight:700 !important;
+  }
+}
+  .dress-detail h3{
+    order:1;
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:1.15rem;
+    line-height:1.35;
+    white-space:nowrap;
+  }
 
-    border-top:1px solid rgba(49,64,45,.18) !important;
+  .dress-palette{
+    order:2;
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    gap:10px;
+    margin-top:0;
+    margin-bottom:24px;
+  }
+
+  .dress-intro{
+    order:3;
+    margin-top:0 !important;
+    margin-bottom:18px !important;
+
+    font-size:clamp(.76rem,3.3vw,.9rem) !important;
+    line-height:1.65 !important;
+    font-weight:400 !important;
+    letter-spacing:0 !important;
+    color:var(--muted) !important;
+
+    text-wrap:balance;
+  }
+
+  .dress-warning{
+    order:4;
+    margin-top:0 !important;
+    padding-top:18px !important;
+
+    font-size:clamp(.76rem,3.3vw,.9rem) !important;
+    line-height:1.65 !important;
+    font-weight:400 !important;
+    letter-spacing:0 !important;
+    color:var(--coffee) !important;
+
+    border-top:1px solid rgba(75,58,48,.18) !important;
+    text-wrap:balance;
+  }
+
+  .dress-code-note::before{
+    display:none;
+  }
+
+  /* RSVP: title and recommendation start from the same left edge */
+
+  .rsvp-heading{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    text-align:left;
+  }
+
+  .rsvp-heading h2,
+  .rsvp-heading p{
+    width:100%;
+    max-width:360px;
+    margin-left:0;
+    margin-right:0;
+    text-align:left;
+  }
+
+  .rsvp-heading h2{
+    margin-top:0;
+    font-size:clamp(1.85rem,8vw,2.35rem);
+    line-height:1.22;
+    white-space:normal;
+    text-wrap:balance;
+  }
+
+  .rsvp-heading p{
+    margin-top:24px;
+    font-size:clamp(.76rem,3.3vw,.9rem);
+    line-height:1.7;
+    letter-spacing:0;
+    color:var(--muted);
+    text-wrap:balance;
+  }
+
+  /* Other compact mobile text */
+
+  .detail h3{
+    font-size:1.05rem;
+  }
+
+  .detail-sub{
+    font-size:.74rem;
+  }
+
+  .timeline h3{
+    font-size:1.02rem;
+    white-space:nowrap;
+  }
+
+  .timeline p{
+    font-size:.72rem;
+    white-space:nowrap;
+  }
 }
